@@ -213,6 +213,9 @@ open class KotlinThriftOptions : ThriftOptions() {
     @Input
     var structBuilders = false
 
+    @Input
+    var generateServer = false
+
     fun serviceClientStyle(name: String) {
         val stylesByName = ClientStyle.values()
                 .map { it.optionName to it }

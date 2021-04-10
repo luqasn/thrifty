@@ -145,6 +145,10 @@ abstract class ThriftyTask : SourceTask() {
                 withDataClassBuilders()
             }
 
+            if (options.generateServer) {
+                generateServer()
+            }
+
             if (!options.emitServiceClients) {
                 omitServiceClients()
             } else {

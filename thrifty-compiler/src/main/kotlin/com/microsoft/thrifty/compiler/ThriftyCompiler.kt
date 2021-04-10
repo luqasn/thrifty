@@ -198,6 +198,10 @@ class ThriftyCompiler {
                     help = "When set, don't generate service clients")
                 .flag(default = false)
 
+        val generateServer: Boolean by option("--experimental-kt-generate-server",
+                help = "When set, generate kotlin server implementation (EXPERIMENTAL)")
+                .flag(default = false)
+
         val omitFileComments: Boolean by option("--omit-file-comments",
                     help = "When set, don't add file comments to generated files")
                 .flag(default = false)
@@ -322,6 +326,10 @@ class ThriftyCompiler {
 
             if (omitServiceClients) {
                 gen.omitServiceClients()
+            }
+
+            if (generateServer) {
+                gen.generateServer()
             }
 
             if (kotlinEmitJvmName) {

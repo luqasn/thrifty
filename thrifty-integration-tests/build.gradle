@@ -32,6 +32,8 @@ dependencies {
 
     testImplementation libraries.kotlin
     testImplementation libraries.testing
+
+    implementation 'org.apache.thrift:libthrift:0.12.0'
 }
 
 sourceSets {
@@ -88,6 +90,7 @@ def kompileCoroutineTestThrift = tasks.register("kompileCoroutineTestThrift", Ja
             "--lang=kotlin",
             "--kt-coroutine-clients",
             "--kt-file-per-type",
+            "--experimental-kt-generate-server",
             "$projectDir/CoroutineClientTest.thrift"
     ]
 }
