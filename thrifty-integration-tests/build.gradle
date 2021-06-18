@@ -75,6 +75,7 @@ def kompileTestThrift = tasks.register("kompileTestThrift", JavaExec) { t ->
             "--map-type=java.util.LinkedHashMap",
             "--set-type=java.util.LinkedHashSet",
             "--list-type=java.util.ArrayList",
+            "--experimental-kt-generate-server",
             "$projectDir/ClientThriftTest.thrift"
     ]
 }
@@ -90,7 +91,6 @@ def kompileCoroutineTestThrift = tasks.register("kompileCoroutineTestThrift", Ja
             "--lang=kotlin",
             "--kt-coroutine-clients",
             "--kt-file-per-type",
-            "--experimental-kt-generate-server",
             "$projectDir/CoroutineClientTest.thrift"
     ]
 }
