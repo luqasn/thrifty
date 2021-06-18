@@ -34,4 +34,5 @@ dependencies {
     implementation libraries.kotlinPoet
 
     testImplementation libraries.testing
+    testImplementation 'com.github.tschuchortdev:kotlin-compile-testing:1.4.2'
 }
